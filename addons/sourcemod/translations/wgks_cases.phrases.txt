@@ -1,0 +1,62 @@
+"Phrases"
+{
+	"PrintClient"
+	{
+		"#format" "{1:s},{2:s},{3:s},{4:s}"
+		"ru" "{PURPLE}BG {GRAY}| {BLUE}Кейсы {GRAY}| {GRAY}Поздравляю, вы выбили {1}{2} {GRAY}из кейса {PURPLE}{3} {GRAY}на оружие {PURPLE}{4}"
+	}
+	"PrintAll"
+	{
+		"#format" "{1:s},{2:s},{3:s},{4:s},{5:s}"
+		"ru" "{PURPLE}BG {GRAY}| {BLUE}Кейсы {GRAY}| {GRAY}Игрок {1} выбил {2}{3} {GRAY}из кейса {PURPLE}{4} {GRAY}на оружие {PURPLE}{5}"
+	}
+	"AlreadyOpening"
+	{
+		"ru" "{PURPLE}BG {GRAY}| {BLUE}Кейсы {GRAY}| {GRAY}Дождитесь открытия текущего кейса"
+	}
+	"PrintFastOpen"
+	{
+		"ru" "{PURPLE}BG {GRAY}| {BLUE}Кейсы {GRAY}| {GRAY}Напишите в чат {RED}!fo {GRAY}чтобы ускорить открытие кейса."
+	}
+	"MenuTitle"
+	{
+		"ru" "Список кейсов : "
+	}
+	"MenuItemOpen"
+	{
+		"#format" "{1:i}"
+		"ru" "Открыть ({1} шт.)"
+	}
+	"MenuItemBuy"
+	{
+		"#format" "{1:i}"
+		"ru" "Купить ({1})"
+	}
+	"MenuItemBuyAndOpen"
+	{
+		"#format" "{1:i}"
+		"ru" "Купить и открыть ({1})"
+	}
+	"MenuItemInstantlyOpen"
+	{
+		"#format" "{1:s}"
+		"ru" "Мгновенное открытие ({1})"
+	}
+	"MenuItemShowDrop"
+	{
+		"ru" "Показать дроп"
+	}
+	"Incorrect"
+	{
+		"#format" "{1:i}"
+		"ru" "Некорректная цена, либо не указана. ID кейса: {1}"
+	}
+	"DropMenuTitle"
+	{
+		"ru" "Возможный дроп :"
+	}
+	"Knife"
+	{
+		"ru" "Нож"
+	}
+}
