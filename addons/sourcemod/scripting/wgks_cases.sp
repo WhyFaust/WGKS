@@ -257,7 +257,7 @@ public int CasesMenu_Callback(Menu menu, MenuAction action, int param1, int para
             }
             else
             {
-                PrintToChat(iClient, "%T", "Incorrect", iClient, iCaseNum);
+                CPrintToChat(iClient, "%T", "Incorrect", iClient, iCaseNum);
             }
         }
     }

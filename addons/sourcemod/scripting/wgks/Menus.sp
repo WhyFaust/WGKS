@@ -499,7 +499,7 @@ public int NameTagMenuHandler(Menu menu, MenuAction action, int client, int sele
                 if(StrEqual(buffer, "nametag"))
                 {
                     g_bWaitingForNametag[client] = true;
-                    PrintToChat(client, " %s \x04%t", g_ChatPrefix, "NameTagInstruction");
+                    CPrintToChat(client, " %s %t", g_ChatPrefix, "NameTagInstruction");
                 }
                 else if(StrEqual(buffer, "delete"))
                 {

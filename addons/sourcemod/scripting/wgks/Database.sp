@@ -426,13 +426,11 @@ public void UpdatePlayerData(Database database, DBResultSet results, const char[
 
 public void T_UpdatePlayerDataCallback(Database database, DBResultSet results, const char[] error, DataPack data)
 {
-    PrintToChatAll("5");
     if (strlen(error)>0)
     {
         LogError("[T_UpdatePlayerDataCallback] error: \"%s\"", error);
         return;
     }
-    PrintToChatAll("6");
     int client = data.ReadCell();
     char value[64];
     data.ReadString(value, sizeof(value));
@@ -491,11 +489,9 @@ public void UpdateClientStickersDataPost(Database database, DBResultSet results,
         char steamid[32];
         if(GetClientAuthId(client, AuthId_Steam2, steamid, sizeof(steamid), true))
         {
-            PrintToChatAll("2");
             char query[1024];
             if (results.RowCount > 0)
             {
-                PrintToChatAll("3");
                 FormatEx(query, sizeof(query), "UPDATE %sstickers SET `slot%i`=%i WHERE `steamid` = '%s' AND `weaponindex` = %i", g_TablePrefix, slot, g_PlayerWeapon[client][index].Sticker[slot], steamid, defIndex);
                 g_hDatabase.Query(SQLCallback_Void, query);
             }
