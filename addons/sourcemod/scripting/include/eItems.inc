@@ -73,6 +73,12 @@
 #define ITEMTYPE_WEAPON 0
 #define ITEMTYPE_GLOVES 1
 
+enum WearRemap
+{
+    Min,
+    Max
+};
+
 native int      eItems_GetWeaponCount();
 native int      eItems_GetPaintsCount();
 native int      eItems_GetGlovesCount();
@@ -85,6 +91,8 @@ native int      eItems_GetStickersSetsCount();
 native int      eItems_GetAgentsCount();
 native int      eItems_GetPatchesCount();
 native int      eItems_GetCratesCount();
+native int      eItems_GetSpraysCount();
+native int      eItems_GetSpraysSetsCount();
 
 native bool     eItems_AreItemsSynced();
 native bool     eItems_AreItemsSyncing();
@@ -249,6 +257,9 @@ native bool     eItems_IsNativeSkin(int iSkinNum, int iItemNum, int iItemType);
 native bool     eItems_IsNativeSkinByDefIndex(int iSkinDefIndex, int iItemDefIndex, int iItemType);
 native int      eItems_GetSkinRarity(int iDefIndex);
 native int      eItems_GetSkinRarityName(int iDefIndex, char[] szBuffer, int iLength);
+native float    eItems_GetSkinWearRemapByDefIndex(int iDefIndex, WearRemap remap);
+native float    eItems_GetSkinWearRemapBySkinNum(int iSkinNum, WearRemap remap);
+
 
 /*              Gloves             */
 
@@ -316,6 +327,8 @@ native bool     eItems_GetAgentPlayerModelByDefIndex(int iDefIndex, char[] szBuf
 native bool     eItems_GetAgentPlayerModelByAgentNum(int iAgentNum, char[] szBuffer, int iLength);
 native int      eItems_GetAgentTeamByDefIndex(int iDefIndex);
 native int      eItems_GetAgentTeamByAgentNum(int iAgentNum);
+native bool     eItems_GetAgentVOPrefixByDefIndex(int iDefIndex, char[] szBuffer, int iLength); // szBuffer wil be blank if agent has no vo_prefix defined
+native bool     eItems_GetAgentVOPrefixByAgentNum(int iAgentNum, char[] szBuffer, int iLength); // szBuffer wil be blank if agent has no vo_prefix defined
 
 /*              Patches             */
 
@@ -341,3 +354,19 @@ enum struct eItems_CrateItem
     int WeaponDefIndex;
     int SkinDefIndex;
 }
+
+/*              Sprays             */
+
+native int      eItems_GetSpraySetIdBySpraySetNum(int iSpraySetNum);
+native int      eItems_GetSpraySetNumBySpraySetId(int iSpraySetId);
+native bool     eItems_GetSpraySetDisplayNameBySpraySetId(int iSpraySetId, char[] szBuffer, int iLength);
+native bool     eItems_GetSpraySetDisplayNameBySpraySetNum(int iSpraySetNum, char[] szBuffer, int iLength);
+
+native int      eItems_GetSprayNumByDefIndex(int iDefIndex);
+native int      eItems_GetSprayDefIndexBySprayNum(int iSprayNum);
+native bool     eItems_GetSprayDisplayNameByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayDisplayNameBySprayNum(int iSprayNum, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayMaterialPathByDefIndex(int iDefIndex, char[] szBuffer, int iLength);
+native bool     eItems_GetSprayMaterialPathBySprayNum(int iSprayNum, char[] szBuffer, int iLength);
+
+native bool     eItems_IsSprayInSet(int iSpraySetNum, int iSprayNum);
